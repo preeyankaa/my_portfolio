@@ -1,8 +1,8 @@
 # My Portfolio
 
-A personal portfolio website showcasing my work, projects, skills, education, and experience.
+Personal portfolio website showcasing my projects, skills, education, and experience.
 
-## Tech Stack
+### Built With
 
 - React
 - Vite
@@ -10,12 +10,3 @@ A personal portfolio website showcasing my work, projects, skills, education, an
 - Framer Motion
 - Lucide React
 - JavaScript
-
-## Features
-
-- Responsive design
-- Dark / Light mode
-- Projects showcase
-- Experience & Education
-- Skills section
-- Contact section
