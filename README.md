@@ -1,20 +1,21 @@
-# Priyanka — AI & Data Science Portfolio
+# My Portfolio
 
-Hi! I'm Priyanka, an AI & Data Science graduate interested in building practical AI applications and useful software.
+A personal portfolio website showcasing my work, projects, skills, education, and experience.
 
-### Tech Stack
+## Tech Stack
 
-- Python
-- Machine Learning
-- LLMs & RAG
 - React
-- FastAPI
-- SQL
-- Git & GitHub
-- AWS
+- Vite
+- Tailwind CSS
+- Framer Motion
+- Lucide React
+- JavaScript
 
-### Portfolio
+## Features
 
-This repository contains the source code for my personal portfolio website, including my experience, education, skills, and projects.
-
-Built with React, Tailwind CSS and Framer Motion.
+- Responsive design
+- Dark / Light mode
+- Projects showcase
+- Experience & Education
+- Skills section
+- Contact section
