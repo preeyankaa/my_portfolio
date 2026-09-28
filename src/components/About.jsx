@@ -2,12 +2,9 @@ import { motion } from "framer-motion";
 
 function About() {
   return (
-    <motion.section
+    <section
       id="about"
-      initial={{ opacity: 0, y: 25 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="border-t border-black/10 py-16"
+      className="border-t border-black/10 py-10"
     >
       <div>
         <p className="mb-2 text-[1.7rem] font-bold text-neutral-900">
@@ -18,7 +15,7 @@ function About() {
           <h2 className="text-[1.1rem] font-semibold leading-8 tracking-tight text-neutral-900">
             Building practical AI applications, not just experiments.
           </h2>
-        
+
           <p className="mt-1 text-[1rem] font-normal leading-8 text-neutral-600">
             I'm an Artificial Intelligence & Data Science graduate interested
             in building useful software around AI, machine learning and modern
@@ -27,7 +24,7 @@ function About() {
           </p>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }
 

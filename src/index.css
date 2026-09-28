@@ -182,10 +182,10 @@ body[style*="rgb(17, 17, 17)"] .nav-link:hover {
   display: inline-flex;
   align-items: center;
   border-radius: 999px;
-  padding: 6px 11px;
+  padding: 4px 10px;
   background: #171717;
   color: white;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 500;
   border: 0.5px solid #171717;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -458,12 +458,30 @@ body[style*="rgb(17, 17, 17)"] #contact .text-neutral-600 {
   color: #d4d4d4;
 }
 
+/* Contact label - dark mode */
+body[style*="rgb(17, 17, 17)"] #contact .contact-label {
+  background: #ffffff;
+  color: #171717;
+}
+
+/* Contact border - dark mode */
+body[style*="rgb(17, 17, 17)"] #contact {
+  border-color: rgba(255, 255, 255, 0.15);
+}
 
 
 
 
 /* hro dark mode *?
 /* Dark mode - Hero */
+
+/* View Projects - Light mode */
+#top a[href="#projects"] {
+  background: #000000;
+  color: #ffffff;
+}
+
+
 body[style*="rgb(17, 17, 17)"] #top .text-neutral-500 {
   color: #d4d4d4;
 }
@@ -501,4 +519,11 @@ body[style*="rgb(17, 17, 17)"] #education > div > p,
 body[style*="rgb(17, 17, 17)"] #skills > div > p,
 body[style*="rgb(17, 17, 17)"] #projects > div > p {
   color: #ffffff;
+}
+
+
+
+/* Keep anchor sections below the fixed navbar */
+section[id] {
+  scroll-margin-top: 100px;
 }

@@ -13,7 +13,7 @@ function App() {
     <div className="page-background min-h-screen">
       <Navbar />
 
-      <main className="mx-auto w-[calc(100%-32px)] max-w-[45rem] px-0 pb-24">
+      <main className="mx-auto w-[calc(100%-32px)] max-w-[43rem] px-0 pb-24">
         <Hero />
         <About />
         <Experience />

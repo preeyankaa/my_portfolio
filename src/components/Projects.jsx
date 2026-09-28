@@ -4,15 +4,12 @@ import { projects } from "../data";
 
 function Projects() {
   return (
-    <motion.section
+    <section
       id="projects"
-      initial={{ opacity: 0, y: 25 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="border-t border-black/10 py-16"
+      className="border-t border-black/10 py-8"
     >
       <div>
-        <p className="mb-6 text-[1.2rem] font-bold text-neutral-900">
+        <p className="mb-6 text-[1.7rem] font-bold tracking-tight text-neutral-900">
           Projects
         </p>
 
@@ -20,15 +17,15 @@ function Projects() {
           {projects.map((project, index) => (
             <article
               key={index}
-              className="project-card group flex min-h-[235px] flex-col justify-between rounded-2xl border border-black/10 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              className="project-card group flex min-h-[220px] flex-col justify-between rounded-2xl border border-black/10 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
             >
               <div>
-                <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-[1.05rem] font-semibold tracking-tight text-neutral-900">
+                <div className="flex items-start justify-between gap-3">
+                  <h3 className="text-[1.05rem] font-semibold leading-6 tracking-tight text-neutral-900">
                     {project.title}
                   </h3>
 
-                  <div className="flex shrink-0 gap-1">
+                  <div className="flex shrink-0 items-center gap-0.5">
                     <a
                       href={project.github}
                       target="_blank"
@@ -58,11 +55,11 @@ function Projects() {
                 </p>
               </div>
 
-              <div className="mt-6 flex flex-wrap gap-2">
+              <div className="mt-5 flex flex-wrap gap-1.5">
                 {project.technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="rounded-full bg-neutral-100 px-3 py-1 text-[0.72rem] font-medium text-neutral-600"
+                    className="rounded-full bg-neutral-100 px-2.5 py-1 text-[0.7rem] font-medium text-neutral-600"
                   >
                     {tech}
                   </span>
@@ -72,7 +69,7 @@ function Projects() {
           ))}
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }
 
