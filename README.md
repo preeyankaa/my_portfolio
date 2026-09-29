@@ -8,5 +8,5 @@ Personal portfolio website showcasing my projects, skills, education, and experi
 - Vite
 - Tailwind CSS
 - Framer Motion
-- Lucide React 
+<!-- - Lucide React -->
 - JavaScript
