@@ -1,27 +1,37 @@
-import { motion } from "framer-motion";
 
 function About() {
+  const interests = [
+    "Machine Learning",
+    "Generative AI",
+    "LLMs & RAG",
+    "Backend Development",
+  ];
+
   return (
-    <section
-      id="about"
-      className="border-t border-black/10 py-10"
-    >
-      <div>
-        <p className="mb-2 text-[1.7rem] font-bold text-neutral-900">
-          About
+    <section id="about" className="portfolio-section">
+      <h2 className="section-heading">About Me</h2>
+
+      <div className="about-content">
+        <p className="about-intro">
+          I'm an AI & Data Science graduate passionate about
+          building practical, intelligent applications.
         </p>
 
-        <div className="max-w-3xl">
-          <h2 className="text-[1.1rem] font-semibold leading-8 tracking-tight text-neutral-900">
-            Building practical AI applications, not just experiments.
-          </h2>
+        <p className="about-description">
+          With experience in AI image processing and projects
+          involving Generative AI, LLMs and retrieval-augmented
+          generation, I enjoy exploring how technology can solve
+          real-world problems. I'm focused on growing as an
+          AI/ML Developer while strengthening my software
+          development and problem-solving skills.
+        </p>
 
-          <p className="mt-1 text-[1rem] font-normal leading-8 text-neutral-600">
-            I'm an Artificial Intelligence & Data Science graduate interested
-            in building useful software around AI, machine learning and modern
-            web technologies. My interests include LLM applications, RAG,
-            computer vision, backend APIs and deploying practical AI systems.
-          </p>
+        <div className="about-tags">
+          {interests.map((interest) => (
+            <span className="about-tag" key={interest}>
+              {interest}
+            </span>
+          ))}
         </div>
       </div>
     </section>

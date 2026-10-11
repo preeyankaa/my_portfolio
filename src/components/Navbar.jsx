@@ -1,60 +1,144 @@
-import { useState } from "react";
+
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { personalInfo } from "../data";
+
+const links = [
+  ["Home", "top"],
+  ["About", "about"],
+  ["Experience", "experience"],
+  ["Education", "education"],
+  ["Skills", "skills"],
+  ["Projects", "projects"],
+  ["Contact", "contact"],
+];
 
 function Navbar() {
   const [open, setOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("top");
 
-  const links = [
-    ["About", "about"],
-    ["Experience", "experience"],
-    ["Education", "education"],
-    ["Skills", "skills"],
-    ["Projects", "projects"],
-    ["Contact", "contact"],
-  ];
+  useEffect(() => {
+    const sectionIds = ["top", ...links.map(([, id]) => id)];
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+
+    let ticking = false;
+
+    const updateActiveSection = () => {
+      const activationLine = 150;
+      let currentSection = "top";
+
+      for (const section of sections) {
+        if (section.getBoundingClientRect().top <= activationLine) {
+          currentSection = section.id;
+        } else {
+          break;
+        }
+      }
+
+      setActiveSection(currentSection);
+      ticking = false;
+    };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateActiveSection);
+        ticking = true;
+      }
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", updateActiveSection);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", updateActiveSection);
+    };
+  }, []);
+
+  const closeMenu = () => setOpen(false);
 
   return (
-    <header className="fixed left-1/2 top-4 z-50 w-[calc(100%-32px)] max-w-[50rem] -translate-x-1/2">
-      <nav className="glass-navbar flex items-center justify-center px-3 py-2">
-        
-        {/* Desktop Navbar */}
-          <div className="hidden items-center gap-1 text-sm min-[620px]:flex">
-            {links.map(([label, id]) => (
+    <header className="site-navbar">
+      <nav className="navbar-inner">
+        <a
+          href="#top"
+          className="navbar-brand"
+          onClick={closeMenu}
+          aria-label="Priyanka Bhandari - Home"
+        >
+          Priyanka Bhandari
+        </a>
+
+        {/* Desktop navigation */}
+        <div className="navbar-links">
+          {links.map(([label, id]) => (
             <a
               key={id}
               href={`#${id}`}
-              className="nav-link"
+              className={`navbar-link ${
+                activeSection === id ? "active" : ""
+              }`}
+              aria-current={
+                activeSection === id ? "location" : undefined
+              }
             >
               {label}
             </a>
           ))}
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Desktop Resume button */}
+        <div className="navbar-resume">
+          <a
+            href={personalInfo.resume}
+            target="_blank"
+            rel="noreferrer"
+            className="navbar-resume-button"
+          >
+            Resume
+          </a>
+        </div>
+
+        {/* Mobile hamburger button */}
         <button
-          onClick={() => setOpen(!open)}
-          className="rounded-full p-2 transition hover:bg-black/5 min-[620px]:hidden"
-          aria-label="Toggle menu"
+          type="button"
+          className="navbar-menu-toggle"
+          onClick={() => setOpen((current) => !current)}
+          aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={open}
         >
-          {open ? <X size={21} /> : <Menu size={21} />}
+          {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </nav>
 
-      {/* Mobile Menu */}
+      {/* Mobile dropdown */}
       {open && (
-         <div className="glass-mobile-menu mt-2 px-4 py-4 min-[620px]:hidden">
-          <div className="flex flex-col gap-1 text-sm">
-            {links.map(([label, id]) => (
-              <a
-                key={id}
-                href={`#${id}`}
-                onClick={() => setOpen(false)}
-                className="mobile-nav-link rounded-lg px-3 py-3 text-neutral-600"
-              >
-                {label}
-              </a>
-            ))}
-          </div>
+        <div className="navbar-mobile-menu">
+          {links.map(([label, id]) => (
+            <a
+              key={id}
+              href={`#${id}`}
+              className={`navbar-mobile-link ${
+                activeSection === id ? "active" : ""
+              }`}
+              onClick={closeMenu}
+            >
+              {label}
+            </a>
+          ))}
+
+          <a
+            href={personalInfo.resume}
+            target="_blank"
+            rel="noreferrer"
+            className="navbar-mobile-resume-link"
+            onClick={closeMenu}
+          >
+            Resume ↗
+          </a>
         </div>
       )}
     </header>

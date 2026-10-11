@@ -1,26 +1,31 @@
-import { motion } from "framer-motion";
+
 import { skills } from "../data";
 
 function Skills() {
-  const allSkills = Object.values(skills).flat();
-
   return (
-    <section
-      id="skills"
-      className="border-t border-black/10 py-8"
-    >
-      <div>
-        <p className="mb-5 text-[1.7rem] font-bold tracking-tight text-neutral-900">
-          Skills
-        </p>
+    <section id="skills" className="portfolio-section">
+      <h2 className="section-heading">Skills & Technologies</h2>
 
-        <div className="flex flex-wrap gap-1.5">
-          {allSkills.map((skill) => (
-            <span key={skill} className="skill-pill">
-              {skill}
-            </span>
-          ))}
-        </div>
+      <p className="section-subtitle">
+        Technologies and tools I use to build AI-powered applications.
+      </p>
+
+      <div className="skills-list">
+        {Object.entries(skills).map(([category, items]) => (
+          <div key={category} className="skills-category">
+            <h3 className="skills-category-title">
+              {category}
+            </h3>
+
+            <div className="skills-pills">
+              {items.map((skill) => (
+                <span key={skill} className="skill-pill">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

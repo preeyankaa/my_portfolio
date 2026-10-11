@@ -1,60 +1,51 @@
-import { motion } from "framer-motion";
 import { education } from "../data";
 
 function Education() {
   return (
     <section
       id="education"
-      className="border-t border-black/10 py-8"
+      className="portfolio-section"
     >
-      <div>
-        <p className="mb-5 text-[1.7rem] font-bold text-neutral-900">
-          Education
-        </p>
+      <h2 className="section-heading">Education</h2>
 
-        <div className="space-y-5">
+      <div className="flex flex-col gap-[35px]">
           {education.map((item, index) => (
-            <div
-              key={index}
-              className="grid grid-cols-[44px_minmax(0,1fr)_155px] items-start gap-2"
-            >
-              {/* Institution Logo */}
-              <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border border-black/10 bg-white">
-                <img
-                  src={item.image}
-                  alt={`${item.institution} logo`}
-                  className="h-full w-full object-contain"
-                />
-              </div>
-
-              {/* Institution + Education */}
-              <div>
-                <a
-                  href={item.website}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="company-link"
-                >
-                  <span>{item.institution}</span>
-                  <span className="company-arrow">&gt;</span>
-                </a>
-
-                <p className="mt-0.5 text-[0.9rem] font-medium text-neutral-800">
-                  {item.degree}
-                </p>
-
-                <p className="mt-1 text-[0.86rem] leading-5 text-neutral-700">
-                  {item.result}
-                </p>
-              </div>
-
-              {/* Timeline */}
-              <p className="text-right text-[0.88rem] font-medium leading-5 text-neutral-500">
-                {item.period}
-              </p>
+          <div
+            key={index}
+                className="grid grid-cols-[44px_minmax(0,1fr)_auto] items-start gap-3"                >
+            <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl border border-black/10 bg-white p-1">
+              <img
+                src={item.image}
+                alt={`${item.institution} logo`}
+                className="h-full w-full object-contain"
+              />
             </div>
-          ))}
-        </div>
+
+            <div className="min-w-0">
+              <a
+                href={item.website}
+                target="_blank"
+                rel="noreferrer"
+                className="company-link"
+              >
+                <span>{item.institution}</span>
+                <span className="company-arrow">&gt;</span>
+              </a>
+
+              <p className="mt-1 text-sm leading-6 text-neutral-600">
+                {item.degree}
+              </p>
+
+              {/* <span className="mt-2 inline-flex rounded-full border border-black/10 bg-white/70 px-2.5 py-1 text-xs font-semibold text-neutral-700">
+                {item.result}
+              </span> */}
+            </div>
+
+            <p className="text-right text-xs font-medium leading-5 text-neutral-500">
+              {item.period}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   );

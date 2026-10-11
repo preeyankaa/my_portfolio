@@ -1,5 +1,5 @@
+
 import {
-  Home,
   Github,
   Instagram,
   Linkedin,
@@ -8,6 +8,7 @@ import {
   Twitter,
   Youtube,
   BookOpen,
+  Home,
 } from "lucide-react";
 
 import { useEffect, useState } from "react";
@@ -17,98 +18,51 @@ function SocialBar() {
   const [dark, setDark] = useState(false);
 
   useEffect(() => {
-    document.documentElement.style.background = dark
-      ? "#111111"
-      : "#f7f7f5";
+    const background = dark ? "#111111" : "#f7f8fc";
 
-    document.body.style.background = dark
-      ? "#111111"
-      : "#f7f7f5";
+    document.documentElement.style.background = background;
+    document.body.style.background = background;
+    document.body.style.color = dark ? "#edf0fa" : "#20243a";
 
-    document.body.style.color = dark
-      ? "#f5f5f5"
-      : "#171717";
+    document.documentElement.classList.toggle("dark", dark);
   }, [dark]);
 
-  const socials = [
-    {
-    name: "Home",
-    icon: Home,
-    url: "#top",
-   },
-    {
-      name: "Instagram",
-      icon: Instagram,
-      url: personalInfo.instagram,
-    },
-    {
-      name: "LinkedIn",
-      icon: Linkedin,
-      url: personalInfo.linkedin,
-    },
-    {
-      name: "YouTube",
-      icon: Youtube,
-      url: personalInfo.youtube,
-    },
-    {
-      name: "GitHub",
-      icon: Github,
-      url: personalInfo.github,
-    },
-    {
-      name: "Blog",
-      icon: BookOpen,
-      url: personalInfo.blog,
-    },
-    {
-      name: "X",
-      icon: Twitter,
-      url: personalInfo.x,
-    },
+  const socials = [ 
+    { name: "LinkedIn", icon: Linkedin, url: personalInfo.linkedin },
+    { name: "YouTube", icon: Youtube, url: personalInfo.youtube },
+    { name: "GitHub", icon: Github, url: personalInfo.github },
   ];
 
   return (
-    <div className="fixed bottom-5 left-1/2 z-50 -translate-x-1/2">
-      <div
-        className={`flex items-center gap-2 rounded-full border px-3 py-2 shadow-2xl backdrop-blur-xl transition-all duration-300 ${
-          dark
-            ? "border-white/10 bg-white/10 text-white"
-            : "border-black/10 bg-white/85 text-black"
-        }`}
-      >
+    <div className="social-bar-container">
+      <div className={`social-bar ${dark ? "social-bar-dark" : ""}`}>
         {socials.map((social) => {
           const Icon = social.icon;
+          const isHome = social.name === "Home";
 
           return (
-            <div
-              key={social.name}
-              className="social-wrapper"
-            >
-              <span className="social-tooltip">
-                {social.name}
-              </span>
+            <div key={social.name} className="social-wrapper">
+              <span className="social-tooltip">{social.name}</span>
 
               <a
-                href={social.url}
-                target={social.name === "Home" ? "_self" : "_blank"}
-                rel={social.name === "Home" ? undefined : "noreferrer"}
+                href={social.url || "#"}
+                target={isHome ? "_self" : "_blank"}
+                rel={isHome ? undefined : "noreferrer"}
                 aria-label={social.name}
                 className="social-icon"
+                onClick={(event) => {
+                  if (!social.url || social.url === "#") {
+                    event.preventDefault();
+                  }
+                }}
               >
-                <Icon size={17} />
+                <Icon size={18} strokeWidth={1.8} />
               </a>
             </div>
           );
         })}
 
-        <div
-          className={`mx-1 h-5 w-px ${
-            dark
-              ? "bg-white/20"
-              : "bg-black/10"
-          }`}
-        />
+        <span className="social-divider" />
 
         <div className="social-wrapper">
           <span className="social-tooltip">
@@ -116,19 +70,15 @@ function SocialBar() {
           </span>
 
           <button
-            onClick={() => setDark(!dark)}
+            type="button"
+            onClick={() => setDark((current) => !current)}
             aria-label="Toggle theme"
-            // className={`social-icon ${
-            //   dark
-            //     ? "hover:bg-white hover:text-black"
-            //     : ""
-            // }`}
             className="social-icon"
           >
             {dark ? (
-              <Sun size={17} />
+              <Sun size={18} strokeWidth={1.8} />
             ) : (
-              <Moon size={17} />
+              <Moon size={18} strokeWidth={1.8} />
             )}
           </button>
         </div>

@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { ArrowUpRight, Github } from "lucide-react";
 import { projects } from "../data";
 
@@ -6,68 +5,70 @@ function Projects() {
   return (
     <section
       id="projects"
-      className="border-t border-black/10 py-8"
+      className="portfolio-section"
     >
-      <div>
-        <p className="mb-6 text-[1.7rem] font-bold tracking-tight text-neutral-900">
-          Projects
-        </p>
+      <h2 className="section-heading">Featured Projects</h2>
 
-        <div className="grid gap-4 sm:grid-cols-2">
-          {projects.map((project, index) => (
-            <article
-              key={index}
-              className="project-card group flex min-h-[220px] flex-col justify-between rounded-2xl border border-black/10 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-            >
-              <div>
-                <div className="flex items-start justify-between gap-3">
-                  <h3 className="text-[1.05rem] font-semibold leading-6 tracking-tight text-neutral-900">
-                    {project.title}
-                  </h3>
+      <p className="section-subtitle">
+        A selection of projects focused on AI, data and practical software.
+      </p>
 
-                  <div className="flex shrink-0 items-center gap-0.5">
+      <div className="grid gap-4 sm:grid-cols-2">
+        {projects.map((project, index) => (
+          <article
+            key={index}
+            className="project-card flex min-h-[220px] flex-col justify-between p-5"
+          >
+            <div>
+              <div className="flex items-start justify-between gap-3">
+                <h3 className="text-base font-bold leading-6 tracking-tight text-neutral-900">
+                  {project.title}
+                </h3>
+
+                <div className="flex shrink-0 items-center gap-1">
+                  {project.github && project.github !== "#" && (
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noreferrer"
                       aria-label={`GitHub - ${project.title}`}
-                      className="rounded-full p-2 text-neutral-500 transition hover:bg-neutral-100 hover:text-black"
+                      className="rounded-full p-2 text-neutral-500 transition hover:bg-black/5"
                     >
-                      <Github size={16} />
+                      <Github size={17} />
                     </a>
+                  )}
 
-                    {project.demo !== "#" && (
-                      <a
-                        href={project.demo}
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label={`Live demo - ${project.title}`}
-                        className="rounded-full p-2 text-neutral-500 transition hover:bg-neutral-100 hover:text-black"
-                      >
-                        <ArrowUpRight size={16} />
-                      </a>
-                    )}
-                  </div>
+                  {project.demo && project.demo !== "#" && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`Live demo - ${project.title}`}
+                      className="rounded-full p-2 text-neutral-500 transition hover:bg-black/5"
+                    >
+                      <ArrowUpRight size={17} />
+                    </a>
+                  )}
                 </div>
-
-                <p className="mt-3 text-[0.86rem] leading-6 text-neutral-600">
-                  {project.description}
-                </p>
               </div>
 
-              <div className="mt-5 flex flex-wrap gap-1.5">
-                {project.technologies.map((tech) => (
-                  <span
-                    key={tech}
-                    className="rounded-full bg-neutral-100 px-2.5 py-1 text-[0.7rem] font-medium text-neutral-600"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
+              <p className="mt-3 text-sm leading-6 text-neutral-600">
+                {project.description}
+              </p>
+            </div>
+
+            <div className="mt-5 flex flex-wrap gap-1.5">
+              {project.technologies.map((tech) => (
+                <span
+                  key={tech}
+                  className="rounded-full border px-2.5 py-1 text-[0.7rem] font-medium"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   );

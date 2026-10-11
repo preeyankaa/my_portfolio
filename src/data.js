@@ -26,10 +26,14 @@ export const personalInfo = {
 export const experiences = [
   {
     company: "Society for Applied Microwave Electronics Engineering & Research (SAMEER)",
-    role: "Trainee Intern — AI / Image Processing",
+    role: "Internship — MRI Image Processing",
     period: "Aug 2025 — Feb 2026",
-    description:
-      "• Worked on MRI image processing, noise analysis, detection and reduction using original DICOM images.\n• Applied Rician and NC-χ noise models for MRI noise analysis based on single-coil and multi-coil imaging.\n• Developed image-processing pipelines using Python and OpenCV while focusing on preserving important diagnostic information.\n• Techstack: Python, OpenCV, DICOM, Image Processing, MRI.",
+    description: [
+      "Worked on MRI image processing, noise analysis, detection and reduction using original DICOM images.",
+      "Applied Rician and NC-χ noise models for single-coil and multi-coil MRI noise analysis.",
+      "Built Python and OpenCV image-processing pipelines while preserving important diagnostic details."
+    ],
+    techStack: ["Python", "OpenCV", "Machine Learning", "Statistics", "DICOM", "Image Processing"],
     website: "https://sameer.gov.in/",
     image: "/sameer.png",
   },
@@ -48,7 +52,7 @@ export const experiences = [
 export const education = [
   {
     institution: "Vidyavardhini's College of Engineering & Technology",
-    degree: "Bachelor's in Artificial Intelligence & Data Science",
+    degree: "B.E. — Artificial Intelligence & Data Science",
     period: "2022 — 2026",
     website: "https://vcet.edu.in/",
     image: "/vcet.png",
@@ -56,47 +60,52 @@ export const education = [
 
   {
     institution: "Shri T. P. Bhatia College of Science",
-    degree: "Higher Secondary School Certificate (HSC)",
+    degree: "Higher Secondary Certificate (HSC) — Information Technology",
     period: "2020 — 2022",
     website: "https://tpbhatiacollege.com/",
     image: "/tpbhatia.jpeg",
   },
 ];
 
-export const skills = {
-  "AI / Machine Learning": [
-    "Python",
-    "NumPy",
-    "Pandas",
-    "Scikit-learn",
-    "Machine Learning",
-    "Computer Vision",
-  ],
 
-  "Generative AI": [
+export const skills = {
+
+"Programming & Databases": [
+  "Python",
+  "JavaScript",
+  "SQL",
+  "MongoDB",
+  "SQLite",
+  "PostgreSQL",
+],
+
+
+  "AI & Generative AI": [
+    "Machine Learning",
+    "Generative AI",
     "LLMs",
     "RAG",
-    "LangChain",
-    "Embeddings",
     "Prompt Engineering",
   ],
 
-  Development: [
-    "React",
+  "Frameworks & Libraries": [
     "FastAPI",
-    "REST APIs",
-    "HTML",
-    "CSS",
-    "Tailwind CSS",
+    "Flask",
+    "React",
+    "Pandas",
+    "NumPy",
+    "Matplotlib",
+    "Scikit-learn",
+    "OpenCV",
   ],
 
-  "Database / Tools": [
-    "SQL",
+  "Tools & Cloud": [
     "Git",
     "GitHub",
     "AWS",
   ],
 };
+
 
 export const projects = [
   {
