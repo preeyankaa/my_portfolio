@@ -65,22 +65,76 @@ button {
    PAGE BACKGROUND
 ======================================== */
 
+
+/* ========================================
+   ANIMATED PURPLE PAGE BACKGROUND
+======================================== */
+
 .page-background {
+  position: relative;
+  isolation: isolate;
   min-height: 100vh;
-  background:
-    radial-gradient(
-      ellipse at 5% 5%,
-      rgba(198, 177, 255, 0.20),
-      transparent 34%
-    ),
-    radial-gradient(
-      ellipse at 95% 12%,
-      rgba(164, 205, 255, 0.17),
-      transparent 32%
-    ),
-    var(--page-bg);
+  background: var(--page-bg);
   transition: background 0.25s ease;
 }
+
+.page-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse 45% 35% at 10% 12%,
+      rgba(156, 104, 255, 0.48),
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 40% 35% at 85% 25%,
+      rgba(224, 139, 255, 0.42),
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 45% 40% at 55% 65%,
+      rgba(122, 125, 255, 0.34),
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 35% 30% at 15% 90%,
+      rgba(244, 158, 211, 0.36),
+      transparent 100%
+    );
+
+  filter: blur(48px);
+  background-size: 140% 140%;
+  animation: purpleBackgroundFlow 12s ease-in-out infinite alternate;
+}
+
+@keyframes purpleBackgroundFlow {
+  0% {
+    background-position: 0% 0%;
+    transform: scale(1);
+  }
+
+  50% {
+    background-position: 60% 40%;
+    transform: scale(1.08);
+  }
+
+  100% {
+    background-position: 100% 80%;
+    transform: scale(1.03);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-background::before {
+    animation: none;
+  }
+}
+
 
 .portfolio-main {
   width: 100%;
@@ -1955,6 +2009,78 @@ html.dark .navbar-mobile-resume-link {
   animation-timeline: view();
   animation-range: entry 0% cover 50%;
 }
+
+
+
+
+
+
+/* Visible animated purple background glow */
+body {
+  position: relative;
+  isolation: isolate;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: -25%;
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 20% 25%,
+      rgba(139, 92, 246, 0.42) 0%,
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 78% 35%,
+      rgba(192, 132, 252, 0.38) 0%,
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 50% 80%,
+      rgba(129, 140, 248, 0.32) 0%,
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 90% 85%,
+      rgba(167, 139, 250, 0.25) 0%,
+      transparent 25%
+    );
+
+  filter: blur(45px);
+  opacity: 0.95;
+  animation: purpleFlow 10s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes purpleFlow {
+  0% {
+    transform: translate(-3%, -2%) scale(1);
+  }
+
+  35% {
+    transform: translate(3%, 2%) scale(1.08);
+  }
+
+  70% {
+    transform: translate(-1%, 4%) scale(1.04);
+  }
+
+  100% {
+    transform: translate(3%, -3%) scale(1.1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    animation: none;
+  }
+}
+
+
 
 
 
