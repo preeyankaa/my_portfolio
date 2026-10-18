@@ -1074,7 +1074,7 @@ button {
 .social-bar {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: center;      /* vertical center */
   justify-content: center;
   gap: 8px;
   padding: 9px 12px;
@@ -1103,6 +1103,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  /* NO right / bottom / padding here */
 }
 
 .social-icon {
@@ -1119,11 +1120,18 @@ button {
   color: inherit;
   cursor: pointer;
   text-decoration: none;
+  line-height: 0; /* SVG ko perfect center */
   transition:
     color 0.2s ease,
     background 0.2s ease,
     border-color 0.2s ease,
     transform 0.2s ease;
+}
+
+.social-icon svg {
+  display: block;
+  width: 20px;
+  height: 20px;
 }
 
 .social-icon:hover {
@@ -1770,7 +1778,12 @@ html.dark .navbar-mobile-resume-link {
     padding: 11px 19px;
     font-size: 0.88rem;
   }
+}
 
+@media (max-width: 520px) {
+  /* ... baaki hero/navbar/section rules same ... */
+
+  /* Social bar — centered icons inside oval */
   .social-bar-container {
     left: 50%;
     bottom: 12px;
@@ -1780,23 +1793,44 @@ html.dark .navbar-mobile-resume-link {
 
   .social-bar {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 3px;
-    padding: 6px 7px;
-    box-sizing: border-box;
+    gap: 4px;
+    padding: 8px 10px; /* equal padding → vertical center */
   }
 
-  .social-icon {
+  .social-wrapper {
+    /* reset — no absolute / padding */
+    position: relative;
+    right: auto;
+    bottom: auto;
+    padding: 0;
+    gap: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
+  }
+
+  .social-icon {
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+  }
+
+  .social-icon svg {
+    width: 18px;
+    height: 18px;
   }
 
   .social-divider {
-    align-self: center;
+    height: 20px;
+    margin: 0 2px;
   }
+}
 
 /* ========================================
    REDUCED MOTION
