@@ -1971,3 +1971,45 @@ body::before {
   }
 }
 
+
+
+/* ========================================
+   FOOTER ALWAYS AT BOTTOM (MOBILE FIX)
+======================================== */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  overflow-x: clip;
+}
+
+/* Background glow ko page ke bahar nikalne se roko (extra gap ki wajah) */
+.page-background {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;   /* fallback */
+  min-height: 100dvh;  /* mobile browsers ke liye sahi height */
+  overflow: clip;
+}
+
+/* Main content jagah le, footer neeche chipka rahe */
+.portfolio-main {
+  flex: 1 0 auto;
+}
+
+.portfolio-footer {
+  flex-shrink: 0;
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+@media (max-width: 520px) {
+  .portfolio-footer {
+    margin-top: auto;
+    margin-bottom: 0;
+    /* fixed social bar footer ke text ko na dhake */
+    padding-bottom: 72px;
+  }
+}
