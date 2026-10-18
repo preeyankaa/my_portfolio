@@ -1449,9 +1449,7 @@ html.dark .navbar-mobile-resume-link {
 /* ========================================
    RESPONSIVE
 ======================================== */
-/* ========================================
-   RESPONSIVE
-======================================== */
+
 
 /* Desktop default: hide hamburger */
 .navbar-menu-toggle {
@@ -1581,12 +1579,14 @@ html.dark .navbar-mobile-resume-link {
   }
 
   .hero-section {
-    min-height: 380px;
-    padding: 25px 0 35px;
+    min-height: auto;
+    padding: 15px 0 5px;
   }
 
-  .section-band {
-    padding: 0 18px;
+  .section-band > section {
+    padding: 22px 25px;
+    margin-bottom: 10px;
+    scroll-margin-top: 72px;
   }
 
   .section-band > section {
