@@ -1779,20 +1779,24 @@ html.dark .navbar-mobile-resume-link {
   }
 
   .social-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 3px;
     padding: 6px 7px;
+    box-sizing: border-box;
   }
 
   .social-icon {
-    width: 34px;
-    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
   }
 
   .social-divider {
-    height: 22px;
-    margin: 0 2px;
+    align-self: center;
   }
-}
 
 /* ========================================
    REDUCED MOTION
