@@ -2012,12 +2012,25 @@ html.dark .navbar-mobile-resume-link {
   animation-range: entry 0% cover 30%;
 }
 
-/* Contact */
+/* Contact — no scroll animation */
 .contact-section {
-  animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
-  animation-timeline: view();
-  animation-range: entry 0% cover 35%;
+  animation: none;
+  animation-timeline: auto;
+  animation-range: normal;
+  transform: none;
+  opacity: 1;
 }
+
+/* Footer — stays at the natural end of the page */
+.portfolio-footer {
+  position: relative;
+  animation: none;
+  animation-timeline: auto;
+  animation-range: normal;
+  transform: none;
+  opacity: 1;
+}
+
 
 /* Tech chips in experience */
 .tech-chip {
