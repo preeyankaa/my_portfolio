@@ -1,40 +1,53 @@
-import { ArrowUpRight, Github } from "lucide-react";
+
+import { ArrowUpRight, Github, Image as ImageIcon } from "lucide-react";
 import { projects } from "../data";
 
 function Projects() {
   return (
-    <section
-      id="projects"
-      className="portfolio-section"
-    >
+    <section id="projects" className="portfolio-section">
       <h2 className="section-heading">Featured Projects</h2>
 
       <p className="section-subtitle">
-        A selection of projects focused on AI, data and practical software.
+        A collection of projects I've built through academic work, and hackathons.
       </p>
 
-      <div className="grid gap-4 sm:grid-cols-2">
-        {projects.map((project, index) => (
+      <div className="projects-grid">
+        {projects.map((project) => (
           <article
-            key={index}
-            className="project-card flex min-h-[220px] flex-col justify-between p-5"
+            key={project.title}
+            className="project-card"
           >
-            <div>
-              <div className="flex items-start justify-between gap-3">
-                <h3 className="text-base font-bold leading-6 tracking-tight text-neutral-900">
-                  {project.title}
-                </h3>
+            {/* Project image */}
+            <div className="project-image">
+              {project.image ? (
+                <img
+                  src={project.image}
+                  alt={`${project.title} project preview`}
+                  loading="lazy"
+                />
+              ) : (
+                <div className="project-image-placeholder">
+                  <ImageIcon size={34} strokeWidth={1.3} />
+                  <span>Project Preview</span>
+                </div>
+              )}
+            </div>
 
-                <div className="flex shrink-0 items-center gap-1">
+            {/* Project details */}
+            <div className="project-content">
+              <div className="project-heading">
+                <h3>{project.title}</h3>
+
+                <div className="project-actions">
                   {project.github && project.github !== "#" && (
                     <a
                       href={project.github}
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                       aria-label={`GitHub - ${project.title}`}
-                      className="rounded-full p-2 text-neutral-500 transition hover:bg-black/5"
+                      title="View source code"
                     >
-                      <Github size={17} />
+                      <Github size={18} />
                     </a>
                   )}
 
@@ -42,30 +55,28 @@ function Projects() {
                     <a
                       href={project.demo}
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                       aria-label={`Live demo - ${project.title}`}
-                      className="rounded-full p-2 text-neutral-500 transition hover:bg-black/5"
+                      title="View live demo"
                     >
-                      <ArrowUpRight size={17} />
+                      <ArrowUpRight size={19} />
                     </a>
                   )}
                 </div>
               </div>
 
-              <p className="mt-3 text-sm leading-6 text-neutral-600">
+              <p className="project-description">
                 {project.description}
               </p>
-            </div>
 
-            <div className="mt-5 flex flex-wrap gap-1.5">
-              {project.technologies.map((tech) => (
-                <span
-                  key={tech}
-                  className="rounded-full border px-2.5 py-1 text-[0.7rem] font-medium"
-                >
-                  {tech}
-                </span>
-              ))}
+              {/* Technologies */}
+              <div className="project-tags">
+                {project.technologies.map((tech) => (
+                  <span key={tech} className="project-tag">
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </div>
           </article>
         ))}

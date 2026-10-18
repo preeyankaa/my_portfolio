@@ -27,7 +27,7 @@ function Experience() {
                 className="company-link"
               >
                 <span>{item.company}</span>
-                <span className="company-arrow">↗</span>
+                <span className="company-arrow">&gt;</span>
               </a>
 
               <p className="experience-role">{item.role}</p>

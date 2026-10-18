@@ -6,19 +6,15 @@ export const personalInfo = {
   description:
     "I build practical AI-powered applications using machine learning, LLMs, RAG and modern web technologies.",
 
-  email: "your-email@gmail.com",
+  email: "pnsbhandari@gmail.com",
 
-  github: "https://github.com/yourusername",
+  github: "https://github.com/preeyankaa",
 
-  linkedin: "https://www.linkedin.com/in/yourusername/",
-
-  instagram: "https://www.instagram.com/yourusername/",
+  linkedin: "https://linkedin.com/in/priyanka--bhandari/",
 
   youtube: "https://www.youtube.com/@yourusername",
 
   blog: "#",
-
-  x: "https://x.com/yourusername",
 
   resume: "/resume.pdf",
 };
@@ -107,66 +103,35 @@ export const skills = {
 };
 
 
+
 export const projects = [
   {
-    title: "AI CSV / Data Quality Analyzer",
-
-    description:
-      "An AI-powered application that analyzes uploaded CSV datasets and generates a dataset health report by detecting missing values, duplicates, outliers and inconsistent data.",
-
-    technologies: [
-      "Python",
-      "FastAPI",
-      "React",
-      "Pandas",
-      "RAG",
-      "AWS",
-    ],
-
-    github: "https://github.com/yourusername/ai-csv-analyzer",
-
-    demo: "#",
-
-    featured: true,
-  },
-
-  {
     title: "GovMate",
-
     description:
-      "A multilingual AI-powered platform that brings multiple chatbot services into one unified application.",
-
-    technologies: [
-      "Python",
-      "AI",
-      "Chatbot",
-      "Web",
-    ],
-
-    github: "https://github.com/yourusername/govmate",
-
+      "Built an end-to-end RAG application that extracts and structures 5,000+ government service records, then unifies 6 chatbot modules into a single AI assistant through REST APIs and a React frontend.",
+    technologies: ["Python", "RAG", "REST APIs", "React"],
+    image: "/public/govemate.png",
+    github: "https://github.com/GautamC09/GovMate",
     demo: "#",
-
-    featured: true,
   },
 
   {
-    title: "MRI Noise Analysis",
-
+    title: "SignWave",
     description:
-      "An image-processing project focused on MRI noise analysis, detection and reduction while preserving important image information.",
-
-    technologies: [
-      "Python",
-      "OpenCV",
-      "DICOM",
-      "Image Processing",
-    ],
-
-    github: "#",
-
+      "Developed a CNN-based sign language recognition model with ~80% accuracy and integrated it into a Flask backend with OpenCV for real-time gesture detection and classification.",
+    technologies: ["Python", "CNN", "OpenCV", "Flask"],
+    image: "/public/signwave.png",
+    github: "https://github.com/preeyankaa/Smart-Hindi-Sign-Language-Recognization",
     demo: "#",
+  },
 
-    featured: false,
+  {
+    title: "ArtGAN",
+    description:
+      "Developed an AI-powered artwork restoration system using Stable Diffusion, with a React interface for image upload and a Python backend that runs inference to restore damaged artworks.",
+    technologies: ["Python", "Stable Diffusion", "React"],
+    image: "/public/artgan.png",
+    github: "https://github.com/GautamC09/GovMate",
+    demo: "#",
   },
 ];

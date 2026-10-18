@@ -14,7 +14,7 @@ function App() {
     <div className="page-background min-h-screen">
       <Navbar />
 
-      <main className="portfolio-main w-full pb-32 pt-20">
+      <main className="portfolio-main w-full pb-16 pt-20">
         <div className="hero-band">
           <Hero />
         </div>
@@ -46,7 +46,7 @@ function App() {
       <footer className="portfolio-footer">
         <div className="footer-content">
           <p className="footer-copyright">
-            © 2026 Priyanka Bhandari. Crafted with curiosity for AI/ML.
+            © 2026 Priyanka Bhandari.
           </p>
         </div>
       </footer>

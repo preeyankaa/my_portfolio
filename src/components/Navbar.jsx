@@ -17,46 +17,63 @@ function Navbar() {
   const [open, setOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("top");
 
-  useEffect(() => {
-    const sectionIds = ["top", ...links.map(([, id]) => id)];
-    const sections = sectionIds
-      .map((id) => document.getElementById(id))
-      .filter(Boolean);
 
-    let ticking = false;
+useEffect(() => {
+  const sectionIds = ["top", ...links.map(([, id]) => id)];
+  let ticking = false;
 
-    const updateActiveSection = () => {
-      const activationLine = 150;
-      let currentSection = "top";
+  const updateActiveSection = () => {
+    const activationLine = 160;
+    let currentSection = "top";
 
-      for (const section of sections) {
-        if (section.getBoundingClientRect().top <= activationLine) {
-          currentSection = section.id;
-        } else {
-          break;
-        }
+    for (const id of sectionIds) {
+      const section = document.getElementById(id);
+      if (!section) continue;
+
+      const rect = section.getBoundingClientRect();
+
+      if (rect.top <= activationLine) {
+        currentSection = id;
+      } else {
+        break;
       }
+    }
 
-      setActiveSection(currentSection);
-      ticking = false;
-    };
+    // Only one section can be active at a time
+    setActiveSection(currentSection);
+    ticking = false;
+  };
 
-    const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(updateActiveSection);
-        ticking = true;
-      }
-    };
+  const handleScroll = () => {
+    if (!ticking) {
+      ticking = true;
+      window.requestAnimationFrame(updateActiveSection);
+    }
+  };
 
-    updateActiveSection();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("resize", updateActiveSection);
+  const handleHashChange = () => {
+    const id = window.location.hash.replace("#", "") || "top";
+    if (sectionIds.includes(id)) {
+      setActiveSection(id);
+    }
+    requestAnimationFrame(updateActiveSection);
+  };
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", updateActiveSection);
-    };
-  }, []);
+  updateActiveSection();
+
+  window.addEventListener("scroll", handleScroll, {
+    passive: true,
+  });
+  window.addEventListener("resize", updateActiveSection);
+  window.addEventListener("hashchange", handleHashChange);
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+    window.removeEventListener("resize", updateActiveSection);
+    window.removeEventListener("hashchange", handleHashChange);
+  };
+}, []);
+
 
   const closeMenu = () => setOpen(false);
 

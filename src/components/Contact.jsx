@@ -13,14 +13,18 @@ function Contact() {
         opportunities to work together.
       </p>
 
+
       <a
-        href={`mailto:${personalInfo.email}`}
+        href={`https://mail.google.com/mail/?view=cm&fs=1&to=${personalInfo.email}`}
+        target="_blank"
+        rel="noopener noreferrer"
         className="contact-email-link"
       >
         <Mail size={17} />
         Send me an email
         <ArrowUpRight size={16} />
       </a>
+
     </section>
   );
 }
