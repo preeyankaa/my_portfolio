@@ -61,9 +61,6 @@ button {
   background: rgba(114, 83, 214, 0.2);
 }
 
-/* ========================================
-   PAGE BACKGROUND
-======================================== */
 
 
 /* ========================================
@@ -1885,6 +1882,25 @@ html.dark .navbar-mobile-resume-link {
     margin: 0 2px;
   }
 }
+
+
+
+/* Mobile footer spacing fix */
+@media (max-width: 520px) {
+  .portfolio-footer {
+    position: relative;
+    width: 100%;
+    margin-top: 0;
+    clear: both;
+  }
+
+  .contact-section {
+    position: relative;
+    margin-bottom: 0;
+  }
+}
+
+
 
 
 
