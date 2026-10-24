@@ -64,10 +64,8 @@ button {
 
 
 /* ========================================
-   PURPLE PAGE BACKGROUND (simple, no weird loading)
-   - Ek hi glow layer, fixed, bina blur filter / animation ke
-   - Isse page load pe flicker / jump nahi hoga
-======================================== */
+   PURPLE PAGE BACKGROUND 
+   ======================================== */
 
 .page-background {
   position: relative;
@@ -1921,11 +1919,10 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;   /* fallback */
-  min-height: 100dvh;  /* mobile browsers ke liye sahi height */
+  min-height: 100dvh;
   overflow: clip;
 }
 
-/* Main content jagah le, footer neeche chipka rahe */
 .portfolio-main {
   flex: 1 0 auto;
 }
@@ -1940,7 +1937,6 @@ body {
   .portfolio-footer {
     margin-top: auto;
     margin-bottom: 0;
-    /* fixed social bar footer ke text ko na dhake */
     padding-bottom: 72px;
   }
 }
@@ -1970,7 +1966,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* Light mode: about tags bhi same hover effect */
 .about-tag {
   cursor: default;
   transition:
@@ -1987,7 +1982,7 @@ body {
 
 
 /* ========================================
-   SOCIAL BAR — MORE SPACING + FOOTER VISIBLE
+   SOCIAL BAR 
 ======================================== */
 
 /* Icons ke beech zyada space */
@@ -2000,7 +1995,6 @@ body {
   margin: 0 6px;
 }
 
-/* Footer ke neeche extra jagah, taaki fixed social bar naam ko na dhake */
 .portfolio-footer {
   padding-bottom: 20px;
 }
@@ -2022,15 +2016,15 @@ body {
 
 
 /* ========================================
-   SOCIAL BAR — footer ke upar + icons ke beech zyada gap
+   SOCIAL BAR — footer up + Icons gap
 ======================================== */
 
-/* Pura oval footer se upar fixed, taaki footer ka naam/text dikhe */
+/* to adjust height of social bar Oval to view footer*/
 .social-bar-container {
   bottom: 50px;
 }
 
-/* Icons ke beech zyada space */
+/*space between Ions*/
 .social-bar {
   gap: 16px;
   padding: 10px 20px;
@@ -2054,7 +2048,6 @@ body {
     margin: 0 4px;
   }
 
-  /* Bar ab footer ke upar hai, isliye extra neeche ka padding hata diya */
   .portfolio-footer {
     padding-bottom: 20px;
   }
@@ -2063,7 +2056,7 @@ body {
 
 
 /* ========================================
-   MOBILE — "Priyanka Bhandari" ek hi line me
+   MOBILE — "Priyanka Bhandari" in single line
 ======================================== */
  
 @media (max-width: 520px) {
@@ -2072,7 +2065,6 @@ body {
     padding-right: 14px;
   }
  
-  /* Screen width ke hisaab se font size, taaki poora naam fit ho */
   .hero-intro {
     font-size: clamp(0.95rem, 4.6vw, 1.35rem) !important;
     letter-spacing: -0.2px;
@@ -2092,7 +2084,7 @@ body {
  
  
 /* ========================================
-   MOBILE — "Hi, I'm Priyanka Bhandari" ek hi line me
+   MOBILE — "Hi, I'm Priyanka Bhandari" in single line
 ======================================== */
  
 @media (max-width: 520px) {
@@ -2108,8 +2100,7 @@ body {
   }
  
   .hero-name {
-    font-size: clamp(1.1rem, 5.4vw, 1.7rem);
-    white-space: nowrap;
+    font-size: clamp(1.2rem, 6vw, 1.9rem);
     padding-left: 0;
     letter-spacing: -0.5px;
   }
