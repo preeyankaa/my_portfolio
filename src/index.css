@@ -2027,7 +2027,7 @@ body {
 
 /* Pura oval footer se upar fixed, taaki footer ka naam/text dikhe */
 .social-bar-container {
-  bottom: 45px;
+  bottom: 50px;
 }
 
 /* Icons ke beech zyada space */
@@ -2059,3 +2059,64 @@ body {
     padding-bottom: 20px;
   }
 }
+
+
+
+/* ========================================
+   MOBILE — "Priyanka Bhandari" ek hi line me
+======================================== */
+ 
+@media (max-width: 520px) {
+  .hero-band {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+ 
+  /* Screen width ke hisaab se font size, taaki poora naam fit ho */
+  .hero-intro {
+    font-size: clamp(0.95rem, 4.6vw, 1.35rem) !important;
+    letter-spacing: -0.2px;
+  }
+ 
+  .hero-name {
+    font-size: clamp(1.1rem, 5.8vw, 1.7rem);
+    white-space: nowrap;   /* Priyanka + Bhandari kabhi alag line me nahi jayenge */
+    padding-left: 2px;
+  }
+ 
+  .hero-emoji {
+    font-size: clamp(1.1rem, 5vw, 1.6rem);
+    padding-right: 2px;
+  }
+}
+ 
+ 
+/* ========================================
+   MOBILE — "Hi, I'm Priyanka Bhandari" ek hi line me
+======================================== */
+ 
+@media (max-width: 520px) {
+  .hero-intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    gap: 0 5px;
+    font-size: clamp(0.95rem, 4.3vw, 1.35rem) !important;
+    letter-spacing: -0.3px;
+  }
+ 
+  .hero-name {
+    font-size: clamp(1.1rem, 5.4vw, 1.7rem);
+    white-space: nowrap;
+    padding-left: 0;
+    letter-spacing: -0.5px;
+  }
+ 
+  .hero-emoji {
+    font-size: clamp(1rem, 5vw, 1.4rem);
+    padding-right: 0;
+  }
+}
+ 
