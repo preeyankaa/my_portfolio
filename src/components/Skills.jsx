@@ -7,7 +7,7 @@ function Skills() {
       <h2 className="section-heading">Skills & Technologies</h2>
 
       <p className="section-subtitle">
-        Technologies and tools I use to build AI-powered applications.
+        Technologies and tools I use to build applications.
       </p>
 
       <div className="skills-list">

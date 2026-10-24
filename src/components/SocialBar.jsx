@@ -29,7 +29,7 @@ function SocialBar() {
 
   const socials = [ 
     { name: "LinkedIn", icon: Linkedin, url: personalInfo.linkedin },
-    { name: "YouTube", icon: Youtube, url: personalInfo.youtube },
+    // { name: "YouTube", icon: Youtube, url: personalInfo.youtube },
     { name: "GitHub", icon: Github, url: personalInfo.github },
   ];
 
