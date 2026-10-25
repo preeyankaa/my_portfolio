@@ -70,7 +70,6 @@ export const skills = {
     "Python",
     "JavaScript",
     "SQL",
-    "MongoDB",
     "SQLite",
     "PostgreSQL",
   ],
@@ -78,7 +77,6 @@ export const skills = {
   "AI & Generative AI": [
     "Machine Learning",
     "Generative AI",
-    "LLMs",
     "RAG",
     "Prompt Engineering",
   ],

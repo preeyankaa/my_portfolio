@@ -3,7 +3,6 @@ function About() {
   const interests = [
     "Machine Learning",
     "Generative AI",
-    "LLMs & RAG",
     "Backend Development",
   ];
 
@@ -13,17 +12,15 @@ function About() {
 
       <div className="about-content">
         <p className="about-intro">
-          I'm an AI & Data Science graduate passionate about
-          building practical, intelligent applications.
+          I'm an AI and Backend Developer.
         </p>
 
         <p className="about-description">
-          With experience in AI image processing and projects
-          involving Generative AI, LLMs and retrieval-augmented
-          generation, I enjoy exploring how technology can solve
-          real-world problems. I'm focused on growing as an
-          AI/ML Developer while strengthening my software
-          development and problem-solving skills.
+          I work with ML, Generative AI, RAG, FastAPI, and AWS to build applications
+           and scalable systems that solve real problems efficiently. 
+           I enjoy exploring how these technologies can be used in 
+           practical projects and turning ideas into working solutions while continuously 
+           improving my skills as a developer.
         </p>
 
         <div className="about-tags">
