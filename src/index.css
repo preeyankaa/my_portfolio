@@ -236,7 +236,7 @@ button {
   border: 1px solid rgba(114, 83, 214, 0.32) !important;
   border-radius: 12px !important;
   background: rgba(114, 83, 214, 0.07) !important;
-  color: #7253d6 !important;
+  color: #5f42c1 !important;
   font-size: 1.15rem !important;
   font-weight: 600 !important;
   line-height: 1.2 !important;
@@ -250,7 +250,7 @@ button {
 
 .navbar-resume-button:hover {
   background: rgba(114, 83, 214, 0.13) !important;
-  border-color: rgba(114, 83, 214, 0.65) !important;
+  border-color: rgba(64, 35, 159, 0.65) !important;
   transform: translateY(-1px);
 }
 
@@ -1752,12 +1752,8 @@ html.dark .navbar-mobile-resume-link {
     font-size: 1.35rem !important;
   }
 
-  .hero-name {
-    font-size: 1.7rem;
-  }
-
   .hero-role {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   .hero-actions {
@@ -2100,7 +2096,7 @@ body {
   }
  
   .hero-name {
-    font-size: clamp(1.2rem, 6vw, 1.9rem);
+    font-size: clamp(1.2rem, 6.2vw, 1.9rem);
     padding-left: 0;
     letter-spacing: -0.5px;
   }
