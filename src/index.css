@@ -1753,7 +1753,7 @@ html.dark .navbar-mobile-resume-link {
   }
 
   .hero-role {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
   }
 
   .hero-actions {
@@ -2091,18 +2091,18 @@ body {
     flex-wrap: nowrap;
     white-space: nowrap;
     gap: 0 5px;
-    font-size: clamp(0.95rem, 4.3vw, 1.35rem) !important;
+    font-size: clamp(1rem, 4.9vw, 1.5rem) !important;
     letter-spacing: -0.3px;
   }
  
   .hero-name {
-    font-size: clamp(1.2rem, 6.2vw, 1.9rem);
+    font-size: clamp(1.2rem, 6.3vw, 1.9rem);
     padding-left: 0;
     letter-spacing: -0.5px;
   }
  
   .hero-emoji {
-    font-size: clamp(1rem, 5vw, 1.4rem);
+    font-size: clamp(1.1rem, 5.6vw, 1.6rem);
     padding-right: 0;
   }
 }
