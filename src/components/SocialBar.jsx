@@ -1,14 +1,8 @@
-
 import {
   Github,
-  Instagram,
   Linkedin,
   Moon,
   Sun,
-  Twitter,
-  Youtube,
-  BookOpen,
-  Home,
 } from "lucide-react";
 
 import { useEffect, useState } from "react";
@@ -27,9 +21,8 @@ function SocialBar() {
     document.documentElement.classList.toggle("dark", dark);
   }, [dark]);
 
-  const socials = [ 
+  const socials = [
     { name: "LinkedIn", icon: Linkedin, url: personalInfo.linkedin },
-    // { name: "YouTube", icon: Youtube, url: personalInfo.youtube },
     { name: "GitHub", icon: Github, url: personalInfo.github },
   ];
 
@@ -38,7 +31,6 @@ function SocialBar() {
       <div className={`social-bar ${dark ? "social-bar-dark" : ""}`}>
         {socials.map((social) => {
           const Icon = social.icon;
-          const isHome = social.name === "Home";
 
           return (
             <div key={social.name} className="social-wrapper">
@@ -46,8 +38,8 @@ function SocialBar() {
 
               <a
                 href={social.url || "#"}
-                target={isHome ? "_self" : "_blank"}
-                rel={isHome ? undefined : "noreferrer"}
+                target="_blank"
+                rel="noreferrer"
                 aria-label={social.name}
                 className="social-icon"
                 onClick={(event) => {
@@ -56,7 +48,7 @@ function SocialBar() {
                   }
                 }}
               >
-                <Icon size={18} strokeWidth={1.8} />
+                <Icon size={10} strokeWidth={2} />
               </a>
             </div>
           );
@@ -76,9 +68,9 @@ function SocialBar() {
             className="social-icon"
           >
             {dark ? (
-              <Sun size={18} strokeWidth={1.8} />
+              <Sun size={18} strokeWidth={2} />
             ) : (
-              <Moon size={18} strokeWidth={1.8} />
+              <Moon size={18} strokeWidth={2} />
             )}
           </button>
         </div>

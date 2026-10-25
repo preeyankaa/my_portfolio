@@ -2107,3 +2107,293 @@ body {
   }
 }
  
+ 
+ 
+/* ========================================
+   DARK MODE — GLOW BUTTONS (navbar resume + hero buttons)
+======================================== */
+ 
+/* Navbar resume button */
+:is(html.dark, body.dark, .dark, [data-theme="dark"], body[style*="rgb(17, 17, 17)"]) .navbar-resume-button,
+:is(html.dark, body.dark, .dark, [data-theme="dark"], body[style*="rgb(17, 17, 17)"]) .navbar-mobile-resume-link,
+:is(html.dark, body.dark, .dark, [data-theme="dark"], body[style*="rgb(17, 17, 17)"]) .navbar-mobile-resume a {
+  background: rgba(167, 139, 250, 0.14) !important;
+  border-color: rgba(196, 181, 253, 0.65) !important;
+  color: #e4daff !important;
+  box-shadow:
+    0 0 10px rgba(167, 139, 250, 0.45),
+    0 0 24px rgba(139, 92, 246, 0.30),
+    inset 0 0 10px rgba(167, 139, 250, 0.12) !important;
+}
+ 
+:is(html.dark, body.dark, .dark, [data-theme="dark"], body[style*="rgb(17, 17, 17)"]) .navbar-resume-button:hover,
+:is(html.dark, body.dark, .dark, [data-theme="dark"], body[style*="rgb(17, 17, 17)"]) .navbar-mobile-resume-link:hover,
+:is(html.dark, body.dark, .dark, [data-theme="dark"], body[style*="rgb(17, 17, 17)"]) .navbar-mobile-resume a:hover {
+  background: rgba(167, 139, 250, 0.24) !important;
+  border-color: rgba(214, 200, 255, 0.95) !important;
+  color: #ffffff !important;
+  box-shadow:
+    0 0 14px rgba(167, 139, 250, 0.7),
+    0 0 36px rgba(139, 92, 246, 0.5),
+    inset 0 0 12px rgba(167, 139, 250, 0.2) !important;
+}
+ 
+/* Hero primary button */
+:is(html.dark, body.dark, .dark, [data-theme="dark"], body[style*="rgb(17, 17, 17)"]) .hero-primary-button {
+  background: linear-gradient(135deg, #8b6cf0, #6d4acb);
+  border-color: rgba(196, 181, 253, 0.7);
+  color: #ffffff !important;
+  box-shadow:
+    0 0 12px rgba(167, 139, 250, 0.55),
+    0 0 30px rgba(139, 92, 246, 0.38);
+}
+ 
+:is(html.dark, body.dark, .dark, [data-theme="dark"], body[style*="rgb(17, 17, 17)"]) .hero-primary-button:hover {
+  background: linear-gradient(135deg, #9a7dfa, #7b58de);
+  box-shadow:
+    0 0 16px rgba(167, 139, 250, 0.8),
+    0 0 42px rgba(139, 92, 246, 0.55);
+}
+ 
+/* Hero secondary button */
+:is(html.dark, body.dark, .dark, [data-theme="dark"], body[style*="rgb(17, 17, 17)"]) .hero-secondary-button {
+  background: rgba(167, 139, 250, 0.12);
+  border-color: rgba(196, 181, 253, 0.6);
+  color: #e4daff !important;
+  box-shadow:
+    0 0 10px rgba(167, 139, 250, 0.4),
+    0 0 24px rgba(139, 92, 246, 0.25),
+    inset 0 0 10px rgba(167, 139, 250, 0.1);
+}
+ 
+:is(html.dark, body.dark, .dark, [data-theme="dark"], body[style*="rgb(17, 17, 17)"]) .hero-secondary-button:hover {
+  background: rgba(167, 139, 250, 0.22);
+  border-color: rgba(214, 200, 255, 0.95);
+  color: #ffffff !important;
+  box-shadow:
+    0 0 14px rgba(167, 139, 250, 0.7),
+    0 0 36px rgba(139, 92, 246, 0.5),
+    inset 0 0 12px rgba(167, 139, 250, 0.18);
+}
+ 
+/* Glow ke liye hover/transition smooth */
+.navbar-resume-button,
+.hero-primary-button,
+.hero-secondary-button {
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.3s ease;
+}
+
+
+
+/* ========================================
+   SOCIAL BAR — light + dark same box style
+======================================== */
+
+.social-bar-container {
+  position: fixed;
+  left: 50%;
+  bottom: 50px;
+  top: auto;
+  z-index: 100;
+  width: max-content;
+  max-width: calc(100% - 16px);
+  transform: translateX(-50%);
+}
+
+/* Oval — thoda bada */
+.social-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 12px 25px;          /* bada oval */
+  min-height: 50px;            /* overall height up */
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #39334f;
+  box-shadow: 0 8px 28px rgba(72, 55, 120, 0.12);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.social-bar-dark {
+  border-color: rgba(190, 170, 255, 0.22);
+  background: rgba(28, 27, 38, 0.94);
+  color: #e9e5f5;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
+}
+
+.social-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Light mode — same box look as dark */
+.social-icon {
+  display: inline-flex;
+  width: 42px;                 /* icon box thoda compact */
+  height: 36px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid rgba(167, 139, 250, 0.35);
+  border-radius: 5px;          /* same as dark */
+  background: rgba(167, 139, 250, 0.14);
+  color: #5b45a8;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 0;
+  box-shadow: 0 2px 8px rgba(114, 83, 214, 0.08);
+  transition:
+    width 0.2s ease,
+    height 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Icon SVG thoda chhota */
+.social-icon svg {
+  display: block;
+  width: 15px;
+  height: 15px;
+}
+
+.social-icon:hover {
+  transform: translateY(-2px);
+  border-color: rgba(139, 92, 246, 0.65);
+  background: rgba(167, 139, 250, 0.22);
+  color: #6d4acb;
+  box-shadow: 0 4px 14px rgba(114, 83, 214, 0.16);
+}
+
+.social-icon:active {
+  width: 42px;
+  height: 36px;
+  transform: translateY(0);
+  border-color: rgba(139, 92, 246, 0.75);
+  background: rgba(167, 139, 250, 0.26);
+}
+
+/* Dark mode — same structure */
+.social-bar-dark .social-icon,
+html.dark .social-bar .social-icon,
+html.dark .social-bar-dark .social-icon {
+  background: rgba(167, 139, 250, 0.14);
+  border: 1px solid rgba(190, 170, 255, 0.28);
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  color: #d8ceff;
+}
+
+.social-bar-dark .social-icon:hover,
+html.dark .social-bar .social-icon:hover,
+html.dark .social-bar-dark .social-icon:hover {
+  background: rgba(167, 139, 250, 0.26);
+  border-color: rgba(196, 181, 253, 0.55);
+  color: #f0ebff;
+  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.28);
+}
+
+.social-bar-dark .social-icon:active,
+html.dark .social-bar .social-icon:active,
+html.dark .social-bar-dark .social-icon:active {
+  width: 42px;
+  height: 36px;
+}
+
+.social-icon:focus-visible {
+  outline: 2px solid #9678e8;
+  outline-offset: 2px;
+}
+
+.social-divider {
+  width: 1px;
+  height: 22px;
+  flex-shrink: 0;
+  margin: 0 4px;
+  background: rgba(110, 100, 135, 0.25);
+}
+
+.social-bar-dark .social-divider {
+  background: rgba(220, 210, 245, 0.22);
+}
+
+.social-tooltip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 9px);
+  z-index: 101;
+  padding: 6px 10px;
+  border: 1px solid rgba(167, 139, 250, 0.25);
+  border-radius: 8px;
+  background: #292438;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%);
+}
+
+.social-wrapper:hover > .social-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.social-wrapper:focus-within > .social-tooltip {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@media (max-width: 520px) {
+  .social-bar-container {
+    bottom: 45px;
+  }
+
+  .social-bar {
+    gap: 10px;
+    padding: 10px 14px;
+    min-height: 50px;
+  }
+
+  .social-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 5px;
+  }
+
+  .social-icon:active {
+    width: 38px;
+    height: 32px;
+  }
+
+  .social-icon svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .social-divider {
+    height: 18px;
+    margin: 0 2px;
+  }
+}
