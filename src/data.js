@@ -106,7 +106,7 @@ export const projects = [
       "Built an end-to-end RAG application that extracts and structures 5,000+ government service records, then unifies 6 chatbot modules into a single AI assistant through REST APIs and a React frontend.",
     technologies: ["Python", "RAG", "REST APIs", "React"],
     image: "/govemate.png",
-    github: "https://github.com/GautamC09/GovMate",
+    github: "https://github.com/preeyankaa/GovMate.git",
     demo: "#",
   },
 
