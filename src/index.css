@@ -2421,7 +2421,7 @@ html.dark .social-bar-dark .social-icon:active {
    DARK MODE — NAME GLOW + SKILLS HEADLINE
 ======================================== */
 
-/* Dark mode me naam: halka light purple + soft glow */
+/* Dark mode: name light + soft glow */
 :is(html.dark, body.dark, .dark, [data-theme="dark"], body[style*="rgb(17, 17, 17)"]) .hero-name {
   color: #cdbfff !important;
   text-shadow:
@@ -2429,12 +2429,12 @@ html.dark .social-bar-dark .social-icon:active {
     0 0 26px rgba(139, 92, 246, 0.38);
 }
 
-/* Skills ki headline ("Mai ye tech stack use karti hu") dark mode me light */
+/* Dark mode : Skills headline light */
 :is(html.dark, body.dark, .dark, [data-theme="dark"], body[style*="rgb(17, 17, 17)"]) #skills .section-subtitle {
   color: #d6cfea !important;
 }
 
-/* Skills ke category titles bhi dark mode me light */
+/*dark mode: Skills category also light*/
 :is(html.dark, body.dark, .dark, [data-theme="dark"], body[style*="rgb(17, 17, 17)"]) .skills-category-title {
   color: #e4ddf7 !important;
 }

@@ -19,9 +19,9 @@ export const experiences = [
     role: "Internship — MRI Image Processing",
     period: "Aug 2025 — Feb 2026",
     description: [
-      "Worked on MRI image processing, noise analysis, detection and reduction using original DICOM images.",
-      "Applied Rician and NC-χ noise models for single-coil and multi-coil MRI noise analysis.",
-      "Built Python and OpenCV image-processing pipelines while preserving important diagnostic details.",
+      "Analyzed 150+ DICOM MRI scans using Python to assess image quality and characterize noise patterns.",
+      "Developed ML models to detect noise type and estimate noise level, achieving 80% classification accuracy.",
+      "Built Python and OpenCV noise-reduction pipelines that preserve importantn diagnostic details.",
     ],
     techStack: [
       "Python",
@@ -101,19 +101,19 @@ export const skills = {
 
 export const projects = [
   {
-    title: "GovMate",
+    title: "GovMate - Unified Chatbot System",
     description:
-      "Built an end-to-end RAG application that extracts and structures 5,000+ government service records, then unifies 6 chatbot modules into a single AI assistant through REST APIs and a React frontend.",
-    technologies: ["Python", "RAG", "REST APIs", "React"],
+      "A retrieval-augmented conversational platform that unifies 6 government service chatbots into one intelligent assistant, delivering context-aware answers over 5,000+ structured service records.",
+    technologies: ["Python", "RAG", "Pinecone", "REST APIs", "React"],
     image: "/govemate.png",
-    github: "https://github.com/preeyankaa/GovMate.git",
+    github: "https://github.com/preeyankaa/GovMate",
     demo: "#",
   },
 
   {
-    title: "SignWave",
+    title: "SignWave - Sign Language Recognition",
     description:
-      "Developed a CNN-based sign language recognition model with ~80% accuracy and integrated it into a Flask backend with OpenCV for real-time gesture detection and classification.",
+      "A real-time gesture recognition system that captures live video, classifies sign language gestures with ~80% accuracy, and converts them into text to bridge communication gaps.",
     technologies: ["Python", "CNN", "OpenCV", "Flask"],
     image: "/signwave.png",
     github:
@@ -122,13 +122,15 @@ export const projects = [
   },
 
   {
-    title: "ArtGAN",
+    title: "ArtGAN - Artwork Restoration",
     description:
-      "Developed an AI-powered artwork restoration system using Stable Diffusion, with a React interface for image upload and a Python backend that runs inference to restore damaged artworks.",
+      "A generative AI application for automated restoration of damaged artworks, reconstructing missing and degraded regions while preserving original texture and fine detail. Also published as an IEEE research paper.",
     technologies: ["Python", "Stable Diffusion", "React"],
     image: "/artgan.png",
     // Replace this with the actual ArtGAN repository URL.
     github: "#",
     demo: "#",
+    paper: "https://ieeexplore.ieee.org/document/11467493",
+
   },
 ];

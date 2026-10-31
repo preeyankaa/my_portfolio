@@ -1,5 +1,4 @@
-
-import { ArrowUpRight, Github, Image as ImageIcon } from "lucide-react";
+import {ArrowUpRight, FileText, Github, Image as ImageIcon,} from "lucide-react";
 import { projects } from "../data";
 
 function Projects() {
@@ -60,6 +59,18 @@ function Projects() {
                       title="View live demo"
                     >
                       <ArrowUpRight size={19} />
+                    </a>
+                  )}
+
+                  {project.paper && project.paper !== "#" && (
+                    <a
+                      href={project.paper}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Research paper - ${project.title}`}
+                      title="Read research paper"
+                    >
+                      <FileText size={18} />
                     </a>
                   )}
                 </div>
