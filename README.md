@@ -2,7 +2,7 @@
 
 Personal portfolio website showcasing my projects, skills, education, and experience.
 
-### Built With 
+### Built With
 
 - React
 - Vite
